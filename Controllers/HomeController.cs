@@ -8,11 +8,18 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SalesWebMvc.Controllers {
-    public class HomeController : Controller {
+    public class HomeController : Controller 
+        {
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger) {
             _logger = logger;
+        }
+        public IActionResult About() {
+            ViewData["Message"] = "Your application description page.";
+            ViewData["email"] = "edugubertnascimento@gmail.com";
+
+            return View();
         }
 
         public IActionResult Index() {
